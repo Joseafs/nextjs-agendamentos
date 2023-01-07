@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <>
-      <HeadSEO title="Boilerplate" url={urlRoot} />
+      <HeadSEO title="Agendamento Online" url={urlRoot} />
       <ScreenHome />
     </>
   );

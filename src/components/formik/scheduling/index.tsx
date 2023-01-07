@@ -1,26 +1,24 @@
 import { useFormik } from 'formik';
-import { memo } from 'react';
+import { memo, useContext } from 'react';
 import { Grid } from '~/components/blocks/grid';
 import { ButtonText } from '~/components/buttons/text';
 import { InputText } from '~/components/inputs/text';
+import { TpSchedulingItem } from '~/types/scheduling';
+import { SiteContext } from '~/utils/stores/site';
 import { FormContent, Root } from './styled';
 
-type PropsFormik = {
-  title: string;
-  timeStart: string;
-  timeEnd: string;
-};
-
 const OgFormikScheduling = () => {
-  const handleSubmit = async (values: PropsFormik) => {
-    console.log('tte--inset', values);
+  const { dispatch, state } = useContext(SiteContext);
+
+  const handleSubmit = async (values: TpSchedulingItem) => {
+    dispatch.setScheduling([...state.scheduling, values]);
   };
 
   const formik = useFormik({
     initialValues: {
-      title: '',
-      timeStart: '',
-      timeEnd: ''
+      title: 'Lorem Ipsum',
+      timeStart: '2023-01-18T18:11',
+      timeEnd: '2023-01-27T18:11'
     },
     onSubmit: handleSubmit
   });
@@ -30,6 +28,7 @@ const OgFormikScheduling = () => {
       <FormContent onSubmit={formik.handleSubmit}>
         <Grid flex mgn={[1]}>
           <InputText
+            required
             name="title"
             type="text"
             label="Título"
@@ -40,6 +39,7 @@ const OgFormikScheduling = () => {
         <Grid flex>
           <Grid flex mgn={[1]}>
             <InputText
+              required
               name="timeStart"
               type="datetime-local"
               label="Dia e horário de início"
@@ -49,6 +49,7 @@ const OgFormikScheduling = () => {
           </Grid>
           <Grid flex mgn={[1]}>
             <InputText
+              required
               name="timeEnd"
               type="datetime-local"
               label="Dia e horário de fim"

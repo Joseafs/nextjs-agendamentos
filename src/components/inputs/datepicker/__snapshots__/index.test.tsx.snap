@@ -4,12 +4,12 @@ exports[`Datepicker Should match snapshot 1`] = `
 <div>
   <div
     class="sc-5c4378d1-1 bKLvTD"
-    data-testid="form--datepicker"
+    data-testid="input--datepicker"
     value=""
   >
     <label
       class="sc-5c4378d1-0 dizwnr"
-      for="form--datepicker"
+      for="input--datepicker"
     >
       Test Field
     </label>
@@ -20,7 +20,7 @@ exports[`Datepicker Should match snapshot 1`] = `
       <input
         autocomplete="off"
         class="rmdp-input"
-        id="form--datepicker"
+        id="input--datepicker"
         inputmode="none"
         placeholder="00/00/0000"
         type="text"

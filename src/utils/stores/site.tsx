@@ -1,14 +1,15 @@
 import React, { createContext, useState } from 'react';
+import { TpSchedulingItem } from '~/types/scheduling';
 
 const useValue = () => {
-  const [theme, setTheme] = useState<string>('default');
+  const [scheduling, setScheduling] = useState<TpSchedulingItem[]>([]);
 
   return {
     state: {
-      theme
+      scheduling
     },
     dispatch: {
-      setTheme
+      setScheduling
     }
   };
 };

@@ -37,27 +37,27 @@ export const theme: PropsTheme = {
       text: '#fff'
     },
     error: {
-      main: '#C20A0A',
-      light: '#F76D6D',
-      dark: '#AA0909',
+      main: '#f44336',
+      light: '#ffcdd2',
+      dark: '#b71c1c',
       text: '#fff'
     },
     warning: {
-      main: '#ff9100',
-      light: '#ffa733',
-      dark: '#b26500',
+      main: '#ff9800',
+      light: '#ffe0b2',
+      dark: '#e65100',
       text: '#FEE7E7'
     },
     info: {
       main: '#2196f3',
-      light: '#4dabf5',
-      dark: '#1769aa',
+      light: '#bbdefb',
+      dark: '#0d47a1',
       text: '#fff'
     },
     success: {
-      main: '#8bc34a',
-      light: '#a2cf6e',
-      dark: '#618833',
+      main: '#4caf50',
+      light: '#c8e6c9',
+      dark: '#1b5e20',
       text: '#fff'
     },
     grey: {

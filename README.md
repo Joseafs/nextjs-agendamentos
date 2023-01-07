@@ -1,6 +1,6 @@
 # Boilerplate Next
 
-- Boilerplate Next com Styled-components
+- Estrutura NextJs para realizar agendamentos, os horários marcados não pode ocupar o mesmo momento;
 
 ## O que foi utilizado ?
 
