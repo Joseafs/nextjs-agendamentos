@@ -17,7 +17,7 @@ export type PropsGrid = PropsGridSM & {
   overflow?: 'visible' | 'hidden' | 'scroll' | 'auto';
   maxWidth?: PropsWidth;
   bgColor?: string;
-  inline?: boolean;
+  flex?: boolean;
   align?: 'left' | 'center' | 'right';
 };
 
@@ -39,7 +39,7 @@ const OgGrid = ({
   maxWidthSM,
   mgnSM,
   pdgSM,
-  inline,
+  flex,
   className,
   as
 }: Props) => {
@@ -57,7 +57,7 @@ const OgGrid = ({
       maxWidthSM={maxWidthSM}
       mgnSM={mgnSM}
       pdgSM={pdgSM}
-      inline={inline}
+      flex={flex}
     >
       {children}
     </Root>

@@ -113,26 +113,13 @@ export const theme: PropsTheme = {
     ],
     hover: [
       css`
-        background-color: ${({ theme }) => theme.palette.opacity.light};
-      `,
-      css`
-        background-color: rgba(0, 0, 0, 0.2);
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        transform: translateY(-4px);
-      `,
-      css`
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        transform: translateY(-4px);
-      `,
-      css`
-        background-color: rgba(0, 0, 0, 0.1);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         transform: translateY(-4px);
       `
     ],
     active: [
-      'transform: scale(0.94); transition: unset;',
-      'transform: scale(0.99); transition: unset;'
+      'transform: scale(0.99); transition: unset;',
+      'transform: scale(0.95); transition: unset;'
     ]
   }
 };
