@@ -8,7 +8,7 @@ const OgScreenHome = () => {
   return (
     <TemplateScreen>
       <FlexAlign>
-        <SectionBase>
+        <SectionBase fixed>
           <FlexAlign>
             <Image
               src="/favicon/mstile-150x150.png"

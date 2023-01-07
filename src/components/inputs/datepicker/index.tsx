@@ -21,7 +21,7 @@ const calculateDate = (range: number, operation: '+' | '-'): string => {
   return new Date(date).toISOString().split('T')[0];
 };
 
-const elementID = 'form--datepicker';
+const elementID = 'input--datepicker';
 
 const OgDatepicker = ({ label, date, setDate = () => null }: Props) => {
   function handleChange(value: Value) {

@@ -1,14 +1,18 @@
 import { memo } from 'react';
 import { Container, Root } from './styled';
 
-type Props = {
-  children?: React.ReactNode;
+export type PropsRoot = {
+  fixed?: boolean;
   className?: string;
 };
 
-const OgSectionBase = ({ children, className }: Props) => {
+interface Props extends PropsRoot {
+  children?: React.ReactNode;
+}
+
+const OgSectionBase = ({ children, className, fixed }: Props) => {
   return (
-    <Root className={className}>
+    <Root className={className} fixed={fixed}>
       <Container>{children}</Container>
     </Root>
   );

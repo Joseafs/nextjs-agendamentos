@@ -12,6 +12,7 @@
 - [Prettier](https://prettier.io/)
 - [React Multi Datepicker](https://www.npmjs.com/package/react-multi-date-picker)
 - [React Icons](https://react-icons.github.io/react-icons)
+- [Formik](https://formik.org/)
 
 ## Requerimentos para rodar o projeto local
 

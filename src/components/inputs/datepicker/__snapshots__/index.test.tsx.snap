@@ -3,12 +3,12 @@
 exports[`Datepicker Should match snapshot 1`] = `
 <div>
   <div
-    class="sc-5c4378d1-1 gfwTPz"
+    class="sc-5c4378d1-1 bKLvTD"
     data-testid="form--datepicker"
     value=""
   >
     <label
-      class="sc-5c4378d1-0 edFNzs"
+      class="sc-5c4378d1-0 dizwnr"
       for="form--datepicker"
     >
       Test Field

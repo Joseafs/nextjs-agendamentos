@@ -1,4 +1,3 @@
-// import PoppinsTtf from '../fonts/poppins/Poppins-Regular.ttf';
 import { css } from 'styled-components';
 import { PropsTheme } from '~/types/theme';
 
@@ -7,15 +6,15 @@ export const theme: PropsTheme = {
   breakpoints: {
     keys: ['xs', 'sm', 'md', 'lg', 'xl'],
     width: {
-      desktop: '1120px',
+      desktop: '1200px',
       tablet: '740px',
       mobile: '360px'
     },
     values: {
-      xs: 512,
-      sm: 768,
-      md: 1024,
-      lg: 1280,
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
       xl: 1536
     }
   },
@@ -26,28 +25,40 @@ export const theme: PropsTheme = {
       white: '#fff'
     },
     primary: {
-      main: '#0033CC',
-      light: '#3DA8F5',
-      dark: '#002699',
+      main: '#002aff',
+      light: '#3354ff',
+      dark: '#001db2',
       text: '#fff'
     },
     secondary: {
-      main: '#0FAC0F'
+      main: '#f44336',
+      light: '#f6685e',
+      dark: '#aa2e25',
+      text: '#fff'
     },
     error: {
       main: '#C20A0A',
       light: '#F76D6D',
       dark: '#AA0909',
-      text: '#FEE7E7'
+      text: '#fff'
     },
     warning: {
-      main: '#FEF6E7'
+      main: '#ff9100',
+      light: '#ffa733',
+      dark: '#b26500',
+      text: '#FEE7E7'
     },
     info: {
-      main: '#E5ECFF'
+      main: '#2196f3',
+      light: '#4dabf5',
+      dark: '#1769aa',
+      text: '#fff'
     },
     success: {
-      main: '#08916F'
+      main: '#8bc34a',
+      light: '#a2cf6e',
+      dark: '#618833',
+      text: '#fff'
     },
     grey: {
       50: '#fafafa',
@@ -57,10 +68,13 @@ export const theme: PropsTheme = {
       400: '#bdbdbd',
       500: '#9e9e9e',
       600: '#757575',
-      700: '#666666',
-      800: '#495057',
-      900: '#333333',
-      1000: '#111'
+      700: '#616161',
+      800: '#424242',
+      900: '#212121',
+      A100: 'f5f5f5',
+      A200: 'eeeeee',
+      A400: 'bdbdbd',
+      A700: '616161'
     },
     text: {
       primary: 'rgba(0,0,0,.87)',

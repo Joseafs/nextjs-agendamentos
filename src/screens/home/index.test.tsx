@@ -1,7 +1,12 @@
 import { render } from '@testing-library/react';
+import { ThemeUI } from '~/theme/theme-provider';
 import { ScreenHome } from '.';
 
-const component = <ScreenHome />;
+const component = (
+  <ThemeUI>
+    <ScreenHome />
+  </ThemeUI>
+);
 
 describe('ScreenHome', () => {
   it('Should have the text inside', () => {
