@@ -42,6 +42,7 @@ const OgFormikScheduling = () => {
               required
               name="timeStart"
               type="datetime-local"
+              max={formik.values.timeEnd}
               label="Dia e horário de início"
               value={formik.values.timeStart}
               onChange={formik.handleChange}
@@ -52,6 +53,7 @@ const OgFormikScheduling = () => {
               required
               name="timeEnd"
               type="datetime-local"
+              min={formik.values.timeStart}
               label="Dia e horário de fim"
               value={formik.values.timeEnd}
               onChange={formik.handleChange}

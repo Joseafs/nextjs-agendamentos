@@ -7,6 +7,8 @@ interface Props {
   label?: string;
   required?: boolean;
   value?: string | number;
+  min?: string | number;
+  max?: string | number;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -15,6 +17,8 @@ const OgInputText = ({
   type,
   label,
   value,
+  min,
+  max,
   required,
   onChange
 }: Props) => {
@@ -25,6 +29,8 @@ const OgInputText = ({
         id={name}
         required={required}
         name={name}
+        min={min}
+        max={max}
         type={type}
         value={value}
         onChange={onChange}
