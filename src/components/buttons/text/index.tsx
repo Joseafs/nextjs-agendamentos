@@ -9,11 +9,12 @@ export type PropsThemeButton = {
 interface Props extends PropsThemeButton {
   type?: React.ButtonHTMLAttributes<unknown>['type'];
   text?: string;
+  disabled?: boolean;
 }
 
-const OgButtonText = ({ text, type, color }: Props) => {
+const OgButtonText = ({ text, type, color, disabled }: Props) => {
   return (
-    <Root type={type} color={color}>
+    <Root type={type} color={color} disabled={disabled}>
       {text}
     </Root>
   );

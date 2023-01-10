@@ -10,7 +10,7 @@ export const Root = styled.button<PropsThemeButton>`
   width: 100%;
   justify-content: center;
 
-  ${({ theme, color }) => css`
+  ${({ theme, color, disabled }) => css`
     ${theme.animation.transition[0]};
     background-color: ${getThemeColor(theme, color, 'main')};
     color: ${theme.palette.common.white};
@@ -24,5 +24,12 @@ export const Root = styled.button<PropsThemeButton>`
     &:active {
       ${theme.animation.active[0]};
     }
+
+    ${disabled &&
+    css`
+      pointer-events: none;
+      background-color: ${theme.palette.grey[300]};
+      border: solid 1px ${theme.palette.grey[100]};
+    `}
   `}
 `;

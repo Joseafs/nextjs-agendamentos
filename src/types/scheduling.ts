@@ -1,5 +1,7 @@
 export type TpSchedulingItem = {
+  [key: string]: string | number;
+  id: number;
   title: string;
-  timeStart: string;
-  timeEnd: string;
+  dateTimeStart: string;
+  dateTimeEnd: string;
 };

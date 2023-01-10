@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
-import { memo, useContext } from 'react';
+import { DateTime, Interval } from 'luxon';
+import { memo, useContext, useEffect, useState } from 'react';
 import { Grid } from '~/components/blocks/grid';
 import { ButtonText } from '~/components/buttons/text';
 import { InputText } from '~/components/inputs/text';
@@ -9,19 +10,46 @@ import { FormContent, Root } from './styled';
 
 const OgFormikScheduling = () => {
   const { dispatch, state } = useContext(SiteContext);
+  const [conflict, setConflict] = useState(false);
 
   const handleSubmit = async (values: TpSchedulingItem) => {
-    dispatch.setScheduling([...state.scheduling, values]);
+    const id = state.scheduling.length;
+    const valuesObj = { ...values, id };
+    dispatch.setScheduling([...state.scheduling, valuesObj]);
   };
 
   const formik = useFormik({
     initialValues: {
-      title: 'Lorem Ipsum',
-      timeStart: '2023-01-18T18:11',
-      timeEnd: '2023-01-27T18:11'
+      id: 0,
+      title: '',
+      dateTimeStart: '',
+      dateTimeEnd: '',
+      duration: ''
     },
     onSubmit: handleSubmit
   });
+
+  useEffect(() => {
+    const dtStartISO = DateTime.fromISO(formik.values.dateTimeStart);
+    const dtEndISO = DateTime.fromISO(formik.values.dateTimeEnd);
+    const intervalInput = Interval.fromDateTimes(dtStartISO, dtEndISO);
+
+    const isDateTimeRegistered = state.scheduling.filter((item) => {
+      const dtStartItem = DateTime.fromISO(item.dateTimeStart);
+      const dtEndItem = DateTime.fromISO(item.dateTimeEnd);
+
+      const dtStartInterval = intervalInput.contains(dtStartItem);
+      const dtEndInterval = intervalInput.contains(dtEndItem);
+
+      return dtStartInterval || dtEndInterval;
+    });
+
+    if (isDateTimeRegistered.length > 0) {
+      setConflict(true);
+      return;
+    }
+    setConflict(false);
+  }, [formik.values, state.scheduling]);
 
   return (
     <Root>
@@ -40,28 +68,33 @@ const OgFormikScheduling = () => {
           <Grid flex mgn={[1]}>
             <InputText
               required
-              name="timeStart"
+              name="dateTimeStart"
               type="datetime-local"
-              max={formik.values.timeEnd}
+              max={formik.values.dateTimeEnd}
               label="Dia e horário de início"
-              value={formik.values.timeStart}
+              value={formik.values.dateTimeStart}
               onChange={formik.handleChange}
             />
           </Grid>
           <Grid flex mgn={[1]}>
             <InputText
               required
-              name="timeEnd"
+              name="dateTimeEnd"
               type="datetime-local"
-              min={formik.values.timeStart}
+              min={formik.values.dateTimeStart}
               label="Dia e horário de fim"
-              value={formik.values.timeEnd}
+              value={formik.values.dateTimeEnd}
               onChange={formik.handleChange}
             />
           </Grid>
         </Grid>
         <Grid flex mgn={[2, 1]}>
-          <ButtonText color="primary" text="Agendar" type="submit" />
+          <ButtonText
+            color="primary"
+            text="Agendar"
+            type="submit"
+            disabled={conflict}
+          />
         </Grid>
       </FormContent>
     </Root>
