@@ -30,19 +30,6 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 700;
     src: url('${rootPathFonts}quicksand/Quicksand-Bold.ttf') format('truetype');
   }
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: url('${rootPathFonts}open-sans/OpenSans-Regular.ttf') format('truetype');
-  }
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    src: url('${rootPathFonts}open-sans/OpenSans-SemiBold.ttf') format('truetype');
-  }
- 
 
   :root {
     --primary: ${({ theme }: PropsRootTheme) => theme.palette.primary.main};

@@ -18,21 +18,3 @@ export const BlockColor = styled.div<Props>`
     background-color: ${getThemeColor(theme, color, type)};
   `}
 `;
-export const BlockWarning = styled.div<Props>`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 1rem;
-
-  & * {
-    margin: 0;
-    padding: 0;
-  }
-
-  ${({ theme }) => css`
-    background-color: ${theme.palette.warning.light};
-    color: ${theme.palette.warning.main};
-    border-radius: ${theme.shape.radius}px;
-    padding: ${theme.space * 2}px;
-  `}
-`;

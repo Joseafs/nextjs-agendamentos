@@ -5,3 +5,9 @@ export type TpSchedulingItem = {
   dateTimeStart: string;
   dateTimeEnd: string;
 };
+
+export type TpErrorList = {
+  [key: string]: string | JSX.Element;
+  id: string;
+  text: string | JSX.Element;
+};

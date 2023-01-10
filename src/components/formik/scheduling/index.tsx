@@ -1,18 +1,20 @@
 import { useFormik } from 'formik';
 import { DateTime, Interval } from 'luxon';
 import { memo, useContext, useEffect, useState } from 'react';
+import { errorSchedulingEndBiggerThanStart } from '~/components/blocks/error/list-errors';
 import { Grid } from '~/components/blocks/grid';
 import { ButtonText } from '~/components/buttons/text';
 import { InputText } from '~/components/inputs/text';
 import { TpSchedulingItem } from '~/types/scheduling';
-import { SiteContext } from '~/utils/stores/site';
+import { siteContext } from '~/utils/stores/site';
 import { FormContent, GridContent, Root } from './styled';
 
 const OgFormikScheduling = () => {
-  const { dispatch, state } = useContext(SiteContext);
-  const [conflicts, setConflicts] = useState(false);
+  const { dispatch, state } = useContext(siteContext);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (values: TpSchedulingItem) => {
+    if (error) return;
     const id = state.scheduling.length;
     const valuesObj = { ...values, id };
     dispatch.setScheduling([...state.scheduling, valuesObj]);
@@ -35,22 +37,41 @@ const OgFormikScheduling = () => {
     const dtEndISO = DateTime.fromISO(formik.values.dateTimeEnd);
     const intervalInput = Interval.fromDateTimes(dtStartISO, dtEndISO);
 
+    if (dtStartISO >= dtEndISO) {
+      dispatch.setErrorAddByName(
+        'schedulingEndBiggerThanStart',
+        errorSchedulingEndBiggerThanStart()
+      );
+      setError(true);
+      return;
+    }
+    dispatch.setErrorRemByName('schedulingEndBiggerThanStart');
+
     const isDateTimeRegistered = state.scheduling.filter((item) => {
       const dtStartItem = DateTime.fromISO(item.dateTimeStart);
       const dtEndItem = DateTime.fromISO(item.dateTimeEnd);
+      const intervalRegistered = Interval.fromDateTimes(dtStartItem, dtEndItem);
 
       const dtStartInterval = intervalInput.contains(dtStartItem);
       const dtEndInterval = intervalInput.contains(dtEndItem);
 
-      return dtStartInterval || dtEndInterval;
+      const dtStartIntervalRegistered = intervalRegistered.contains(dtStartISO);
+      const dtEndIntervalRegistered = intervalRegistered.contains(dtEndISO);
+
+      return (
+        dtStartInterval ||
+        dtEndInterval ||
+        dtStartIntervalRegistered ||
+        dtEndIntervalRegistered
+      );
     });
 
     if (isDateTimeRegistered.length > 0) {
       dispatch.setSchedulingConflicts(isDateTimeRegistered);
-      setConflicts(true);
+      setError(true);
       return;
     }
-    setConflicts(false);
+    setError(false);
     dispatch.setSchedulingConflicts([]);
   }, [formik.values, state.scheduling]);
 
@@ -97,7 +118,7 @@ const OgFormikScheduling = () => {
             color="primary"
             text="Agendar"
             type="submit"
-            disabled={conflicts}
+            disabled={error}
           />
         </Grid>
       </FormContent>

@@ -78,7 +78,7 @@ const OgTableScheduling = ({
               Título
               <IconSort
                 active={sortBy === 'title' && sortOrder === 'asc'}
-                visible={sortBy.includes('title')}
+                visible={sortBy === 'title'}
               >
                 <BsArrowDown />
               </IconSort>
@@ -90,7 +90,7 @@ const OgTableScheduling = ({
               Início
               <IconSort
                 active={sortBy === 'dateTimeStart' && sortOrder === 'asc'}
-                visible={sortBy.includes('dateTimeStart')}
+                visible={sortBy === 'dateTimeStart'}
               >
                 <BsArrowDown />
               </IconSort>
@@ -102,7 +102,7 @@ const OgTableScheduling = ({
               Fim
               <IconSort
                 active={sortBy === 'dateTimeEnd' && sortOrder === 'asc'}
-                visible={sortBy.includes('dateTimeEnd')}
+                visible={sortBy === 'dateTimeEnd'}
               >
                 <BsArrowDown />
               </IconSort>

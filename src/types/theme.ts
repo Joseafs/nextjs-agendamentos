@@ -1,8 +1,6 @@
 export type PropsRootTheme = { theme: PropsTheme };
 
-export type WeightProps = 400 | 500 | 600 | 700 | 800;
-
-type PropsPallete = {
+type PropsPalette = {
   main: string;
   light?: string;
   dark?: string;
@@ -29,18 +27,18 @@ export type PropsTheme = {
     };
   };
   palette: {
-    [key: string]: PropsPallete | any;
+    [key: string]: PropsPalette | any;
     mode: string;
     common: {
       black: string;
       white: string;
     };
-    primary: PropsPallete;
-    secondary: PropsPallete;
-    error: PropsPallete;
-    warning: PropsPallete;
-    info: PropsPallete;
-    success: PropsPallete;
+    primary: PropsPalette;
+    secondary: PropsPalette;
+    error: PropsPalette;
+    warning: PropsPalette;
+    info: PropsPalette;
+    success: PropsPalette;
     grey: {
       [key: string]: string;
       50: string;
@@ -98,5 +96,3 @@ export type PropsBaseColors =
   | 'warning';
 
 export type PropsBaseColorsOptions = 'light' | 'dark' | 'main' | 'text';
-
-export type PropsWeight = 300 | 400 | 500 | 600 | 700 | 800;

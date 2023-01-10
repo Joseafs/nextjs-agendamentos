@@ -1,11 +1,13 @@
 import { memo, useContext, useEffect, useState } from 'react';
-import { BlockWarning } from '~/components/elements/styled';
+import { BlockError } from '~/components/blocks/error';
+import { errorSchedulingConflicts } from '~/components/blocks/error/list-errors';
 import { FormikScheduling } from '~/components/formik/scheduling';
 import { SectionBase } from '~/components/sections/base';
 import { TableScheduling } from '~/components/tables/scheduling';
 import { TemplateScreen } from '~/components/templates/screen';
 import { TpSchedulingItem } from '~/types/scheduling';
-import { SiteContext } from '~/utils/stores/site';
+import { siteContext } from '~/utils/stores/site';
+import { Title } from './styled';
 
 const listMock = [
   {
@@ -77,7 +79,9 @@ const listMock = [
 ];
 
 const OgScreenHome = () => {
-  const { state, dispatch } = useContext(SiteContext);
+  const { state, dispatch } = useContext(siteContext);
+
+  const { scheduling, schedulingConflicts } = state;
 
   const [list, setList] = useState<TpSchedulingItem[]>([]);
   const [listConflicts, setListConflicts] = useState<number[]>([]);
@@ -87,11 +91,17 @@ const OgScreenHome = () => {
     setList(state.scheduling);
     if (state.schedulingConflicts.length < 1) {
       setListConflicts([]);
+      dispatch.setErrorRemByName('schedulingConflicts');
       return;
     }
     const listConflictIDs = state.schedulingConflicts.map((item) => item.id);
     setListConflicts(listConflictIDs);
-  }, [state]);
+
+    dispatch.setErrorAddByName(
+      'schedulingConflicts',
+      errorSchedulingConflicts(listConflictIDs.length)
+    );
+  }, [schedulingConflicts, scheduling]);
 
   const Inject = () => {
     dispatch.setScheduling([...list, ...listMock]);
@@ -106,19 +116,9 @@ const OgScreenHome = () => {
   return (
     <TemplateScreen>
       <SectionBase fixed>
-        <h1>Agendamento Online</h1>
+        <Title>Agendamento Online</Title>
         <FormikScheduling />
-        {listConflicts.length > 0 && (
-          <BlockWarning>
-            <h5>
-              Não será possível criar novos agendamentos, resolva os conflitos
-              para continuar
-            </h5>
-            <h6>
-              Conflitos Identificados: <strong>{listConflicts.length}</strong>
-            </h6>
-          </BlockWarning>
-        )}
+        <BlockError />
         <TableScheduling
           listScheduling={list}
           onDelete={handleDelete}

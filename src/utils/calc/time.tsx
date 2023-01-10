@@ -3,6 +3,8 @@ export const calcHoursAndMinutesByMinutes = (totalMinutes: number): string => {
   const minutes = totalMinutes % 60;
 
   return hours > 0
-    ? `${hours} horas ${minutes > 0 ? `e ${minutes} minutos` : ''}`
-    : `${minutes} minutos`;
+    ? `${hours > 1 ? `${hours} horas` : `${hours} hora`} ${
+        minutes > 0 ? `e ${minutes} minutos` : ''
+      }`
+    : `${minutes > 1 ? `${minutes} minutos` : `${minutes} minuto`}`;
 };
