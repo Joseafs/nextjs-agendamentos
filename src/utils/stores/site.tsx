@@ -3,13 +3,18 @@ import { TpSchedulingItem } from '~/types/scheduling';
 
 const useValue = () => {
   const [scheduling, setScheduling] = useState<TpSchedulingItem[]>([]);
+  const [schedulingConflicts, setSchedulingConflicts] = useState<
+    TpSchedulingItem[]
+  >([]);
 
   return {
     state: {
-      scheduling
+      scheduling,
+      schedulingConflicts
     },
     dispatch: {
-      setScheduling
+      setScheduling,
+      setSchedulingConflicts
     }
   };
 };

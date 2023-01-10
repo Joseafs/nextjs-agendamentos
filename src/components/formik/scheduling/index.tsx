@@ -10,12 +10,13 @@ import { FormContent, Root } from './styled';
 
 const OgFormikScheduling = () => {
   const { dispatch, state } = useContext(SiteContext);
-  const [conflict, setConflict] = useState(false);
+  const [conflicts, setConflicts] = useState(false);
 
   const handleSubmit = async (values: TpSchedulingItem) => {
     const id = state.scheduling.length;
     const valuesObj = { ...values, id };
     dispatch.setScheduling([...state.scheduling, valuesObj]);
+    formik.resetForm();
   };
 
   const formik = useFormik({
@@ -45,15 +46,17 @@ const OgFormikScheduling = () => {
     });
 
     if (isDateTimeRegistered.length > 0) {
-      setConflict(true);
+      dispatch.setSchedulingConflicts(isDateTimeRegistered);
+      setConflicts(true);
       return;
     }
-    setConflict(false);
+    setConflicts(false);
+    dispatch.setSchedulingConflicts([]);
   }, [formik.values, state.scheduling]);
 
   return (
     <Root>
-      <FormContent onSubmit={formik.handleSubmit}>
+      <FormContent onSubmit={formik.handleSubmit} id="formik--scheduling-form">
         <Grid flex mgn={[1]}>
           <InputText
             required
@@ -61,6 +64,7 @@ const OgFormikScheduling = () => {
             type="text"
             label="Título"
             value={formik.values.title}
+            placeholder="Informe o Título do agendamento"
             onChange={formik.handleChange}
           />
         </Grid>
@@ -93,7 +97,7 @@ const OgFormikScheduling = () => {
             color="primary"
             text="Agendar"
             type="submit"
-            disabled={conflict}
+            disabled={conflicts}
           />
         </Grid>
       </FormContent>

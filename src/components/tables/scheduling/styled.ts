@@ -32,6 +32,12 @@ export const Table = styled.table`
       &:nth-of-type(odd) {
         background-color: ${theme.palette.grey[100]};
       }
+      &.conflict {
+        background-color: ${theme.palette.error.light};
+        &:nth-of-type(odd) {
+          background-color: ${theme.palette.error.light}a2;
+        }
+      }
     }
   `}
 `;

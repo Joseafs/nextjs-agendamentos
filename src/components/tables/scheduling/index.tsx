@@ -10,6 +10,7 @@ import { IconSort, Root, Table, TableTh } from './styled';
 type PropsSortFields = 'title' | 'dateTimeStart' | 'dateTimeEnd' | string;
 interface Props {
   listScheduling: TpSchedulingItem[];
+  listConflictsID?: number[];
   onDelete?: (id: number) => void;
 }
 
@@ -48,7 +49,11 @@ const handleSortByField = (
   }
 };
 
-const OgTableScheduling = ({ listScheduling, onDelete }: Props) => {
+const OgTableScheduling = ({
+  listScheduling,
+  listConflictsID = [],
+  onDelete
+}: Props) => {
   const [list, setList] = useState<TpSchedulingItem[]>([]);
   const [sortBy, setSortBy] = useState<PropsSortFields>('dateTimeStart');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
@@ -120,7 +125,10 @@ const OgTableScheduling = ({ listScheduling, onDelete }: Props) => {
               const dtDuration = calcHoursAndMinutesByMinutes(dtDurationMin);
 
               return (
-                <tr key={`tr-${title}-${index}`}>
+                <tr
+                  key={`tr-${title}-${index}`}
+                  className={listConflictsID.includes(id) ? 'conflict' : ''}
+                >
                   <td align="center">{title}</td>
                   <td align="center">
                     {dtStart.toFormat(`MM/dd/yyyy`)} <br />{' '}

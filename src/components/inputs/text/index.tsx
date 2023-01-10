@@ -9,6 +9,7 @@ interface Props {
   value?: string | number;
   min?: string | number;
   max?: string | number;
+  placeholder?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -20,6 +21,7 @@ const OgInputText = ({
   min,
   max,
   required,
+  placeholder,
   onChange
 }: Props) => {
   return (
@@ -33,6 +35,7 @@ const OgInputText = ({
         max={max}
         type={type}
         value={value}
+        placeholder={placeholder}
         onChange={onChange}
       />
     </Root>
