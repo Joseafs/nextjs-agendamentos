@@ -6,7 +6,7 @@ import { ButtonText } from '~/components/buttons/text';
 import { InputText } from '~/components/inputs/text';
 import { TpSchedulingItem } from '~/types/scheduling';
 import { SiteContext } from '~/utils/stores/site';
-import { FormContent, Root } from './styled';
+import { FormContent, GridContent, Root } from './styled';
 
 const OgFormikScheduling = () => {
   const { dispatch, state } = useContext(SiteContext);
@@ -68,7 +68,7 @@ const OgFormikScheduling = () => {
             onChange={formik.handleChange}
           />
         </Grid>
-        <Grid flex>
+        <GridContent>
           <Grid flex mgn={[1]}>
             <InputText
               required
@@ -91,7 +91,7 @@ const OgFormikScheduling = () => {
               onChange={formik.handleChange}
             />
           </Grid>
-        </Grid>
+        </GridContent>
         <Grid flex mgn={[2, 1]}>
           <ButtonText
             color="primary"

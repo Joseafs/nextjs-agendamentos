@@ -4,13 +4,7 @@ import { Root } from './styled';
 
 type PropsWidth = 'desktop' | 'tablet' | 'mobile' | string;
 
-export type PropsGridSM = {
-  mgnSM?: number[];
-  pdgSM?: number[];
-  maxWidthSM?: PropsWidth;
-};
-
-export type PropsGrid = PropsGridSM & {
+export type PropsGrid = {
   mgn?: number[];
   pdg?: number[];
   zind?: string;
@@ -19,6 +13,7 @@ export type PropsGrid = PropsGridSM & {
   bgColor?: string;
   flex?: boolean;
   align?: 'left' | 'center' | 'right';
+  xs?: string;
 };
 
 interface Props extends PropsGrid {
@@ -36,9 +31,6 @@ const OgGrid = ({
   bgColor,
   overflow,
   maxWidth,
-  maxWidthSM,
-  mgnSM,
-  pdgSM,
   flex,
   className,
   as
@@ -54,9 +46,6 @@ const OgGrid = ({
       bgColor={bgColor}
       overflow={overflow}
       className={className}
-      maxWidthSM={maxWidthSM}
-      mgnSM={mgnSM}
-      pdgSM={pdgSM}
       flex={flex}
     >
       {children}
