@@ -1,6 +1,6 @@
 # Boilerplate Next
 
-- Estrutura NextJs para realizar agendamentos, os horários marcados não pode ocupar o mesmo momento;
+- Desafio em NextJs para realizar agendamentos, os horários marcados não pode ocupar o mesmo momento;
 
 ## O que foi utilizado ?
 
@@ -32,6 +32,12 @@
 "test:coverage": Avalia testes e expoe a cobertura;
 "prettier:format": Formata todos arquivos ao padrão Prettier;
 ```
+
+---
+
+## Netlify
+
+- [main](https://chlg-agendamentos.netlify.app/): Versão de produção;
 
 ---
 

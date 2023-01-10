@@ -1,6 +1,6 @@
 {
   "name": "nextjs-agendamentos",
-  "description": "Estrutura em NextJs para realizar agendamentos em dia e horário",
+  "description": "Desafio em NextJs para realizar agendamentos em dia e horário",
   "engines": {
     "node": ">=18.x.x",
     "yarn": ">=1.20.x"
