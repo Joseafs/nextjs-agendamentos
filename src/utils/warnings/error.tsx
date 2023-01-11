@@ -1,10 +1,10 @@
 export const errorSchedulingConflicts = (count: number) => (
   <>
     <h5>
-      Novo agendamento não pode ocupar o mesmo periodo de outro já existentes
+      Novo agendamento não pode ocupar o mesmo periodo de outro já cadastrado
     </h5>
     <h6>
-      Conflitos Identificados: <strong>{count}</strong>
+      Conflito(s) Identificado(s): <strong>{count}</strong>
     </h6>
   </>
 );
@@ -15,7 +15,8 @@ export const errorSchedulingEndBiggerThanStart = () => (
       horário de início'
     </h5>
     <h6>
-      Favor selecionar horarios compatíveis... (Considerando a partir de 1min)
+      Favor selecionar horarios compatíveis... (Será considerado a partir de
+      1min)
     </h6>
   </>
 );
