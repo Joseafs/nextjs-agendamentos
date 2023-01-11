@@ -6,6 +6,14 @@ export type TpSchedulingItem = {
   dateTimeEnd: string;
 };
 
+export const SchedulingInitial = {
+  id: 0,
+  title: '',
+  dateTimeStart: '',
+  dateTimeEnd: '',
+  duration: ''
+};
+
 export type TpErrorList = {
   [key: string]: string | JSX.Element;
   id: string;

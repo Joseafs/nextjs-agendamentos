@@ -1,6 +1,6 @@
 import { memo, useContext, useEffect, useState } from 'react';
 import { BlockErrorWired } from '~/components-wired/blocks/error';
-import { FormikScheduling } from '~/components/formik/scheduling';
+import { FormikSchedulingWired } from '~/components-wired/formik/scheduling';
 import { SectionBase } from '~/components/sections/base';
 import { TableScheduling } from '~/components/tables/scheduling';
 import { TemplateScreen } from '~/components/templates/screen';
@@ -117,7 +117,7 @@ const OgScreenHome = () => {
     <TemplateScreen>
       <SectionBase fixed>
         <Title>Agendamento Online</Title>
-        <FormikScheduling />
+        <FormikSchedulingWired />
         <BlockErrorWired />
         <TableScheduling
           listScheduling={list}

@@ -1,9 +1,7 @@
 import styled, { css } from 'styled-components';
 import { useMediaQuery } from '~/utils/theme';
 
-export const Root = styled.div``;
-
-export const FormContent = styled.form`
+export const Root = styled.div`
   ${({ theme }) => css`
     margin: 0 -${theme.space}px;
   `}
