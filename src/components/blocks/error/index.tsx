@@ -1,31 +1,24 @@
-import { memo, useContext, useEffect, useState } from 'react';
+import { memo } from 'react';
 import { TpErrorList } from '~/types/scheduling';
 
 import { AiFillAlert } from 'react-icons/ai';
-import { siteContext } from '~/utils/stores/site';
 
 import { Root, Text, Title, UL } from './styled';
 
 export type Props = {
+  list: TpErrorList[];
   className?: string;
 };
 
-const OgBlockError = ({ className }: Props) => {
-  const { state } = useContext(siteContext);
-  const [list, setList] = useState<TpErrorList[]>([]);
-
-  useEffect(() => {
-    setList(state.error);
-  }, [state.error]);
-
+const OgBlockError = ({ className, list }: Props) => {
   return list.length > 0 ? (
     <Root className={className}>
       <Title>
         ATENÇÃO <AiFillAlert />
       </Title>
       <UL>
-        {list.map((item) => {
-          return <Text>{item.text}</Text>;
+        {list.map(({ id, text }, index) => {
+          return <Text key={`block-error-${id}-${index}`}>{text}</Text>;
         })}
       </UL>
     </Root>

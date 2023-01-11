@@ -17,6 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "~/components/*": ["src/components/*"],
+      "~/components-wired/*": ["src/components-wired/*"],
       "~/pages/*": ["src/pages/*"],
       "~/theme/*": ["src/theme/*"],
       "~/utils/*": ["src/utils/*"],
