@@ -15,9 +15,9 @@ const OgFormikSchedulingWired = () => {
 
   const handlerSubmit = (values: TpSchedulingItem) => {
     if (error) return;
-
-    console.log('tte--values-sub', values, formRef.current?.values);
-    const id = state.scheduling.length;
+    const countIDS = state.scheduling.map((item) => item.id);
+    const maxID = Math.max(...countIDS);
+    const id = maxID === -Infinity ? 0 : maxID + 1;
     const valuesObj = { ...values, id };
     dispatch.setScheduling([...state.scheduling, valuesObj]);
     formRef.current?.resetForm();
@@ -40,10 +40,9 @@ const OgFormikSchedulingWired = () => {
         'schedulingEndBiggerThanStart',
         errorSchedulingEndBiggerThanStart()
       );
-      setError(true);
-      return;
+    } else {
+      dispatch.setErrorRemByName('schedulingEndBiggerThanStart');
     }
-    dispatch.setErrorRemByName('schedulingEndBiggerThanStart');
 
     const isDateTimeRegistered = state.scheduling.filter((item) => {
       const dtStartItem = DateTime.fromISO(item.dateTimeStart);
@@ -66,12 +65,19 @@ const OgFormikSchedulingWired = () => {
 
     if (isDateTimeRegistered.length > 0) {
       dispatch.setSchedulingConflicts(isDateTimeRegistered);
+      return;
+    }
+
+    dispatch.setSchedulingConflicts([]);
+  }, [values, state.scheduling]);
+
+  useEffect(() => {
+    if (state.error.length > 0) {
       setError(true);
       return;
     }
     setError(false);
-    dispatch.setSchedulingConflicts([]);
-  }, [values, state.scheduling]);
+  }, [state.error]);
 
   return (
     <Formik

@@ -132,12 +132,12 @@ const OgTableScheduling = ({
                     {title}
                   </td>
                   <td data-th="Início" align="center">
-                    {dtStart.toFormat(`MM/dd/yyyy`)} <br />{' '}
-                    {dtStart.toFormat(`hh:mm a`)}
+                    {dtStart.toFormat(`dd/MM/yyyy`)} <br />{' '}
+                    {dtStart.toFormat(`HH:mm`)}
                   </td>
                   <td data-th="Fim" align="center">
-                    {dtEnd.toFormat(`MM/dd/yyyy`)} <br />{' '}
-                    {dtEnd.toFormat(`hh:mm a`)}
+                    {dtEnd.toFormat(`dd/MM/yyyy`)} <br />{' '}
+                    {dtEnd.toFormat(`HH:mm`)}
                   </td>
                   <td data-th="Duração" align="center">
                     {dtDuration}
