@@ -15,7 +15,6 @@ export const SchedulingInitial = {
 };
 
 export type TpErrorList = {
-  [key: string]: string | JSX.Element;
   id: string;
   text: string | JSX.Element;
 };

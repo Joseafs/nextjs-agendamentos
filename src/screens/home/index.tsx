@@ -4,8 +4,8 @@ import { FormikSchedulingWired } from '~/components-wired/formik/scheduling';
 import { SectionBase } from '~/components/sections/base';
 import { TableScheduling } from '~/components/tables/scheduling';
 import { TemplateScreen } from '~/components/templates/screen';
-import { TpSchedulingItem } from '~/types/scheduling';
-import { siteContext } from '~/utils/stores/site';
+import { TpSchedulingItem } from '~/types/common';
+import { SiteContext } from '~/utils/stores/site';
 import { errorSchedulingConflicts } from '~/utils/warnings/error';
 import { Title } from './styled';
 
@@ -79,7 +79,7 @@ const listMock = [
 ];
 
 const OgScreenHome = () => {
-  const { state, dispatch } = useContext(siteContext);
+  const { state, dispatch } = useContext(SiteContext);
 
   const { scheduling, schedulingConflicts } = state;
 

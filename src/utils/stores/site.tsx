@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
-import { TpErrorList, TpSchedulingItem } from '~/types/scheduling';
+import { TpErrorList, TpSchedulingItem } from '~/types/common';
 
-const useValue = () => {
+const useSiteContext = () => {
   const [scheduling, setScheduling] = useState<TpSchedulingItem[]>([]);
   const [schedulingConflicts, setSchedulingConflicts] = useState<
     TpSchedulingItem[]
@@ -38,7 +38,9 @@ const useValue = () => {
   };
 };
 
-export const siteContext = createContext({} as ReturnType<typeof useValue>);
+export const SiteContext = createContext(
+  {} as ReturnType<typeof useSiteContext>
+);
 
 interface PropsSiteStore {
   children: React.ReactNode;
@@ -46,8 +48,8 @@ interface PropsSiteStore {
 
 export const SiteStore = (props: PropsSiteStore) => {
   return (
-    <siteContext.Provider value={useValue()}>
+    <SiteContext.Provider value={useSiteContext()}>
       {props.children}
-    </siteContext.Provider>
+    </SiteContext.Provider>
   );
 };

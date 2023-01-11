@@ -3,7 +3,7 @@ import { memo, useEffect, useState } from 'react';
 import { BsArrowDown } from 'react-icons/bs';
 import { MdDelete } from 'react-icons/md';
 import { ButtonIcon } from '~/components/buttons/icon';
-import { TpSchedulingItem } from '~/types/scheduling';
+import { TpSchedulingItem } from '~/types/common';
 import { calcHoursAndMinutesByMinutes } from '~/utils/calc/time';
 import { IconSort, Root, Table, TableTh } from './styled';
 

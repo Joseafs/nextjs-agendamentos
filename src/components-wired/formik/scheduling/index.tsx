@@ -2,12 +2,12 @@ import { Form, Formik, FormikProps } from 'formik';
 import { DateTime, Interval } from 'luxon';
 import { memo, useContext, useEffect, useRef, useState } from 'react';
 import { FormikScheduling } from '~/components/formik/scheduling';
-import { SchedulingInitial, TpSchedulingItem } from '~/types/scheduling';
-import { siteContext } from '~/utils/stores/site';
+import { SchedulingInitial, TpSchedulingItem } from '~/types/common';
+import { SiteContext } from '~/utils/stores/site';
 import { errorSchedulingEndBiggerThanStart } from '~/utils/warnings/error';
 
 const OgFormikSchedulingWired = () => {
-  const { dispatch, state } = useContext(siteContext);
+  const { dispatch, state } = useContext(SiteContext);
   const [error, setError] = useState(false);
   const [values, setValues] = useState<TpSchedulingItem>();
 

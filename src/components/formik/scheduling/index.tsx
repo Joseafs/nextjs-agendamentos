@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { Grid } from '~/components/blocks/grid';
 import { ButtonText } from '~/components/buttons/text';
 import { InputText } from '~/components/inputs/text';
-import { TpSchedulingItem } from '~/types/scheduling';
+import { TpSchedulingItem } from '~/types/common';
 import { GridContent, Root } from './styled';
 
 type Props = {

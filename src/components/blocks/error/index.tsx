@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { TpErrorList } from '~/types/scheduling';
+import { TpErrorList } from '~/types/common';
 
 import { AiFillAlert } from 'react-icons/ai';
 

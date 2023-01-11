@@ -1,10 +1,10 @@
 import { memo, useContext, useEffect, useState } from 'react';
 import { BlockError } from '~/components/blocks/error';
-import { TpErrorList } from '~/types/scheduling';
-import { siteContext } from '~/utils/stores/site';
+import { TpErrorList } from '~/types/common';
+import { SiteContext } from '~/utils/stores/site';
 
 const OgBlockErrorWired = () => {
-  const { state } = useContext(siteContext);
+  const { state } = useContext(SiteContext);
   const [list, setList] = useState<TpErrorList[]>([]);
 
   useEffect(() => {
