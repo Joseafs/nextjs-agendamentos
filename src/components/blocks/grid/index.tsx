@@ -10,7 +10,6 @@ export type PropsGrid = {
   bgColor?: string;
   flex?: boolean;
   align?: 'left' | 'center' | 'right';
-  xs?: string;
 };
 
 interface Props extends PropsGrid {
