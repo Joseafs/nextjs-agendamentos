@@ -11,6 +11,7 @@ interface Props extends PropsThemeButton {
   type?: React.ButtonHTMLAttributes<unknown>['type'];
   children: React.ReactNode;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
+  className?: string;
 }
 
 const OgButtonIcon = ({
@@ -18,10 +19,17 @@ const OgButtonIcon = ({
   color = 'primary',
   contrast = 'light',
   onClick,
+  className,
   children
 }: Props) => {
   return (
-    <Root type={type} color={color} contrast={contrast} onClick={onClick}>
+    <Root
+      className={className}
+      type={type}
+      color={color}
+      contrast={contrast}
+      onClick={onClick}
+    >
       {children}
     </Root>
   );

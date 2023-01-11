@@ -2,10 +2,9 @@ import { DateTime, Interval } from 'luxon';
 import { memo, useEffect, useState } from 'react';
 import { BsArrowDown } from 'react-icons/bs';
 import { MdDelete } from 'react-icons/md';
-import { ButtonIcon } from '~/components/buttons/icon';
 import { TpSchedulingItem } from '~/types/common';
 import { calcHoursAndMinutesByMinutes } from '~/utils/calc/time';
-import { IconSort, Root, Table, TableTh } from './styled';
+import { ButtonRemove, IconSort, Root, Table, TableTh } from './styled';
 
 type PropsSortFields = 'title' | 'dateTimeStart' | 'dateTimeEnd' | string;
 interface Props {
@@ -129,23 +128,25 @@ const OgTableScheduling = ({
                   key={`tr-${title}-${index}`}
                   className={listConflictsID.includes(id) ? 'conflict' : ''}
                 >
-                  <td align="center">{title}</td>
-                  <td align="center">
+                  <td data-th="Título" align="center">
+                    {title}
+                  </td>
+                  <td data-th="Início" align="center">
                     {dtStart.toFormat(`MM/dd/yyyy`)} <br />{' '}
                     {dtStart.toFormat(`hh:mm a`)}
                   </td>
-                  <td align="center">
+                  <td data-th="Fim" align="center">
                     {dtEnd.toFormat(`MM/dd/yyyy`)} <br />{' '}
                     {dtEnd.toFormat(`hh:mm a`)}
                   </td>
-                  <td align="center">{dtDuration}</td>
+                  <td data-th="Duração" align="center">
+                    {dtDuration}
+                  </td>
                   {onDelete && (
                     <td align="center" width={120}>
-                      <div>
-                        <ButtonIcon color="error" onClick={() => onDelete(id)}>
-                          <MdDelete size="1.2rem" />
-                        </ButtonIcon>
-                      </div>
+                      <ButtonRemove color="error" onClick={() => onDelete(id)}>
+                        <MdDelete size="1.2rem" />
+                      </ButtonRemove>
                     </td>
                   )}
                 </tr>
