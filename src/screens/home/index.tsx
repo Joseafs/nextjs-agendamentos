@@ -1,12 +1,12 @@
 import { memo, useContext, useEffect, useState } from 'react';
 import { BlockError } from '~/components/blocks/error';
-import { errorSchedulingConflicts } from '~/components/blocks/error/list-errors';
 import { FormikScheduling } from '~/components/formik/scheduling';
 import { SectionBase } from '~/components/sections/base';
 import { TableScheduling } from '~/components/tables/scheduling';
 import { TemplateScreen } from '~/components/templates/screen';
 import { TpSchedulingItem } from '~/types/scheduling';
 import { siteContext } from '~/utils/stores/site';
+import { errorSchedulingConflicts } from '~/utils/warnings/error';
 import { Title } from './styled';
 
 const listMock = [

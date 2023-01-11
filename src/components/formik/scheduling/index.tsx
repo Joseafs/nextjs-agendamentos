@@ -1,12 +1,12 @@
 import { useFormik } from 'formik';
 import { DateTime, Interval } from 'luxon';
 import { memo, useContext, useEffect, useState } from 'react';
-import { errorSchedulingEndBiggerThanStart } from '~/components/blocks/error/list-errors';
 import { Grid } from '~/components/blocks/grid';
 import { ButtonText } from '~/components/buttons/text';
 import { InputText } from '~/components/inputs/text';
 import { TpSchedulingItem } from '~/types/scheduling';
 import { siteContext } from '~/utils/stores/site';
+import { errorSchedulingEndBiggerThanStart } from '~/utils/warnings/error';
 import { FormContent, GridContent, Root } from './styled';
 
 const OgFormikScheduling = () => {
