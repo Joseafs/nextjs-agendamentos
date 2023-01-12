@@ -3,6 +3,7 @@ import { Input, Label, Root } from './styled';
 
 interface Props {
   name: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   type?: React.InputHTMLAttributes<unknown>['type'];
   label?: string;
   required?: boolean;
@@ -10,7 +11,6 @@ interface Props {
   min?: string | number;
   max?: string | number;
   placeholder?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const OgInputText = ({
@@ -26,10 +26,11 @@ const OgInputText = ({
 }: Props) => {
   return (
     <Root>
-      {label && <Label>{label}</Label>}
+      {label && <Label htmlFor={name}>{label}</Label>}
       <Input
         id={name}
         required={required}
+        data-testid={`input-${name}`}
         name={name}
         min={min}
         max={max}

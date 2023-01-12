@@ -13,6 +13,16 @@ interface Props {
   onDelete?: (id: number) => void;
 }
 
+function descendingOrder<T>(a: T, b: T, orderBy: keyof T) {
+  if (b[orderBy] < a[orderBy]) {
+    return -1;
+  }
+  if (b[orderBy] > a[orderBy]) {
+    return 1;
+  }
+  return 0;
+}
+
 const handleSortByField = (
   list: TpSchedulingItem[],
   field: PropsSortFields,
@@ -21,24 +31,11 @@ const handleSortByField = (
   const commonText = ['title'];
 
   if (commonText.includes(field)) {
-    return list.sort((a, b) => {
-      if (order === 'asc') {
-        if (a[field] < b[field]) {
-          return -1;
-        }
-        if (a[field] > b[field]) {
-          return 1;
-        }
-      } else {
-        if (a[field] < b[field]) {
-          return 1;
-        }
-        if (a[field] > b[field]) {
-          return -1;
-        }
-      }
-      return 0;
-    });
+    return list.sort((a, b) =>
+      order === 'asc'
+        ? -descendingOrder(a, b, field)
+        : descendingOrder(a, b, field)
+    );
   } else {
     return list.sort((a, b) =>
       order === 'asc'
@@ -144,7 +141,11 @@ const OgTableScheduling = ({
                   </td>
                   {onDelete && (
                     <td align="center" width={120}>
-                      <ButtonRemove color="error" onClick={() => onDelete(id)}>
+                      <ButtonRemove
+                        color="error"
+                        onClick={() => onDelete(id)}
+                        name={`remove-${id}`}
+                      >
                         <MdDelete size="1.2rem" />
                       </ButtonRemove>
                     </td>

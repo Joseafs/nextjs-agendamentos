@@ -9,6 +9,7 @@ export type PropsThemeButton = {
 
 interface Props extends PropsThemeButton {
   type?: React.ButtonHTMLAttributes<unknown>['type'];
+  name?: string;
   children: React.ReactNode;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   className?: string;
@@ -20,6 +21,7 @@ const OgButtonIcon = ({
   contrast = 'light',
   onClick,
   className,
+  name,
   children
 }: Props) => {
   return (
@@ -29,6 +31,7 @@ const OgButtonIcon = ({
       color={color}
       contrast={contrast}
       onClick={onClick}
+      data-testid={`button-icon${name && `--${name}`}`}
     >
       {children}
     </Root>
