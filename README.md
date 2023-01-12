@@ -1,4 +1,4 @@
-# Boilerplate Next
+# NextJS Agendamentos
 
 - Desafio em NextJs para realizar agendamentos, os horários marcados não pode ocupar o mesmo momento;
 
