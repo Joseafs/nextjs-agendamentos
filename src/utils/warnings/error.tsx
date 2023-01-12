@@ -20,3 +20,8 @@ export const errorSchedulingEndBiggerThanStart = () => (
     </h6>
   </>
 );
+export const errorSchedulingTitle = () => (
+  <>
+    <h5>Título precisa ter no mínimo 3 caracteres</h5>
+  </>
+);

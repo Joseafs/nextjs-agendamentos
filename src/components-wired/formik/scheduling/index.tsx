@@ -4,11 +4,14 @@ import { memo, useContext, useEffect, useRef, useState } from 'react';
 import { FormikScheduling } from '~/components/formik/scheduling';
 import { SchedulingInitial, TpSchedulingItem } from '~/types/common';
 import { SiteContext } from '~/utils/stores/site';
-import { errorSchedulingEndBiggerThanStart } from '~/utils/warnings/error';
+import {
+  errorSchedulingEndBiggerThanStart,
+  errorSchedulingTitle
+} from '~/utils/warnings/error';
 
 const OgFormikSchedulingWired = () => {
   const { dispatch, state } = useContext(SiteContext);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(true);
   const [values, setValues] = useState<TpSchedulingItem>();
 
   const formRef = useRef<FormikProps<TpSchedulingItem>>(null);
@@ -24,7 +27,7 @@ const OgFormikSchedulingWired = () => {
     setValues(SchedulingInitial);
   };
 
-  const handlerValid = (values: TpSchedulingItem) => {
+  const handlerValidate = (values: TpSchedulingItem) => {
     if (!values) return;
     setValues(values);
   };
@@ -40,9 +43,9 @@ const OgFormikSchedulingWired = () => {
         'schedulingEndBiggerThanStart',
         errorSchedulingEndBiggerThanStart()
       );
-    } else {
-      dispatch.setErrorRemByName('schedulingEndBiggerThanStart');
+      return;
     }
+    dispatch.setErrorRemByName('schedulingEndBiggerThanStart');
 
     const isDateTimeRegistered = state.scheduling.filter((item) => {
       const dtStartItem = DateTime.fromISO(item.dateTimeStart);
@@ -72,6 +75,24 @@ const OgFormikSchedulingWired = () => {
   }, [values, state.scheduling]);
 
   useEffect(() => {
+    if (!values) return;
+    if (values.title.length < 3) {
+      dispatch.setErrorAddByName('schedulingTitle', errorSchedulingTitle());
+      return;
+    }
+    dispatch.setErrorRemByName('schedulingTitle');
+  }, [values?.title]);
+
+  useEffect(() => {
+    if (
+      !values ||
+      !values.title ||
+      !values.dateTimeEnd ||
+      !values.dateTimeStart
+    ) {
+      setError(true);
+      return;
+    }
     if (state.error.length > 0) {
       setError(true);
       return;
@@ -84,7 +105,7 @@ const OgFormikSchedulingWired = () => {
       innerRef={formRef}
       initialValues={SchedulingInitial}
       onSubmit={handlerSubmit}
-      validate={handlerValid}
+      validate={handlerValidate}
     >
       <Form>
         <FormikScheduling disabled={error} />

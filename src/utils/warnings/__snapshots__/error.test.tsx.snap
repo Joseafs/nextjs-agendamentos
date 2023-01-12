@@ -24,3 +24,11 @@ exports[`Warnings Error Should match text of errorSchedulingEndBiggerThanStart 1
   </h6>
 </div>
 `;
+
+exports[`Warnings Error Should match text of errorSchedulingTitle 1`] = `
+<div>
+  <h5>
+    Título precisa ter no mínimo 3 caracteres
+  </h5>
+</div>
+`;
