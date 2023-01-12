@@ -1,6 +1,6 @@
 import { act, fireEvent, render } from '@testing-library/react';
+import { SiteStore } from '~/stores/site';
 import { ThemeUI } from '~/theme/theme-provider';
-import { SiteStore } from '~/utils/stores/site';
 import { FormikSchedulingWired } from '.';
 
 const fluxToInsertSchedule = async (

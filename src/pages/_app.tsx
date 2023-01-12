@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
 import { GlobalStyles } from 'src/theme/globals';
-import { SiteStore } from '~/utils/stores/site';
+import { SiteStore } from '~/stores/site';
 import { ThemeUI } from '../theme/theme-provider';
 
 function MyApp({ Component, pageProps }: AppProps) {

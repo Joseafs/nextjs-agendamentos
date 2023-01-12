@@ -22,7 +22,8 @@
       "~/theme/*": ["src/theme/*"],
       "~/utils/*": ["src/utils/*"],
       "~/screens/*": ["src/screens/*"],
-      "~/types/*": ["src/types/*"]
+      "~/types/*": ["src/types/*"],
+      "~/stores/*": ["src/stores/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

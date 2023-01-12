@@ -4,8 +4,8 @@ import { FormikSchedulingWired } from '~/components-wired/formik/scheduling';
 import { SectionBase } from '~/components/sections/base';
 import { TableScheduling } from '~/components/tables/scheduling';
 import { TemplateScreen } from '~/components/templates/screen';
+import { SiteContext } from '~/stores/site';
 import { TpSchedulingItem } from '~/types/common';
-import { SiteContext } from '~/utils/stores/site';
 import { errorSchedulingConflicts } from '~/utils/warnings/error';
 import { Title } from './styled';
 

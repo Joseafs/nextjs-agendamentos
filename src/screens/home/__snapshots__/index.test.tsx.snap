@@ -1,0 +1,412 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScreenHome Should match snapshot 1`] = `
+<div>
+  <div
+    class="sc-e0c7811d-0 bFbHQj"
+  >
+    <main
+      class="sc-e0c7811d-1 hHeTCp"
+    >
+      <section
+        class="sc-acbe88d-1 ezYntl"
+      >
+        <div
+          class="sc-acbe88d-0 hSHwjd"
+        >
+          <h1
+            class="sc-9f5fb0c5-0 cpBmvw"
+          >
+            Agendamento Online
+          </h1>
+          <form
+            action="#"
+          >
+            <div
+              class="sc-4a45138a-0 cEXHx"
+              id="formik--scheduling-root"
+            >
+              <div
+                class="sc-8c4bf41-0 kZOgiB"
+              >
+                <div
+                  class="sc-277720d7-0 bneybE"
+                >
+                  <label
+                    class="sc-277720d7-1"
+                    for="title"
+                  >
+                    Título
+                  </label>
+                  <input
+                    class="sc-277720d7-2 gznZqK"
+                    data-testid="input-title"
+                    id="title"
+                    name="title"
+                    placeholder="Informe o Título do agendamento"
+                    required=""
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                class="sc-4a45138a-1 fyXKeg"
+              >
+                <div
+                  class="sc-8c4bf41-0 kZOgiB"
+                >
+                  <div
+                    class="sc-277720d7-0 bneybE"
+                  >
+                    <label
+                      class="sc-277720d7-1"
+                      for="dateTimeStart"
+                    >
+                      Dia e horário de início
+                    </label>
+                    <input
+                      class="sc-277720d7-2 gznZqK"
+                      data-testid="input-dateTimeStart"
+                      id="dateTimeStart"
+                      max=""
+                      name="dateTimeStart"
+                      required=""
+                      type="datetime-local"
+                      value=""
+                    />
+                  </div>
+                </div>
+                <div
+                  class="sc-8c4bf41-0 kZOgiB"
+                >
+                  <div
+                    class="sc-277720d7-0 bneybE"
+                  >
+                    <label
+                      class="sc-277720d7-1"
+                      for="dateTimeEnd"
+                    >
+                      Dia e horário de fim
+                    </label>
+                    <input
+                      class="sc-277720d7-2 gznZqK"
+                      data-testid="input-dateTimeEnd"
+                      id="dateTimeEnd"
+                      min=""
+                      name="dateTimeEnd"
+                      required=""
+                      type="datetime-local"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="sc-8c4bf41-0 hnGkhO"
+              >
+                <button
+                  class="sc-1b27c299-0 ivtgTd"
+                  color="primary"
+                  disabled=""
+                  type="submit"
+                >
+                  Agendar
+                </button>
+              </div>
+            </div>
+          </form>
+          <div
+            class="sc-36d0b95e-0 OBoBO"
+          >
+            <table
+              class="sc-36d0b95e-3 cQqYlF"
+            >
+              <thead>
+                <tr>
+                  <th
+                    class="sc-36d0b95e-1 evtReD"
+                  >
+                    Título
+                    <div
+                      class="sc-36d0b95e-4 ctEyvB"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 16 16"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </th>
+                  <th
+                    class="sc-36d0b95e-1 evtReD"
+                  >
+                    Início
+                    <div
+                      class="sc-36d0b95e-4 fFbXZW"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 16 16"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </th>
+                  <th
+                    class="sc-36d0b95e-1 evtReD"
+                  >
+                    Fim
+                    <div
+                      class="sc-36d0b95e-4 ctEyvB"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 16 16"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </th>
+                  <th
+                    align="center"
+                  >
+                    Duração
+                  </th>
+                  <th
+                    align="center"
+                  >
+                    Apagar
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class=""
+                >
+                  <td
+                    align="center"
+                    data-th="Título"
+                  >
+                    Test Note A
+                  </td>
+                  <td
+                    align="center"
+                    data-th="Início"
+                  >
+                    03/01/2023
+                     
+                    <br />
+                     
+                    15:22
+                  </td>
+                  <td
+                    align="center"
+                    data-th="Fim"
+                  >
+                    03/01/2023
+                     
+                    <br />
+                     
+                    22:24
+                  </td>
+                  <td
+                    align="center"
+                    data-th="Duração"
+                  >
+                    7 horas e 2 minutos
+                  </td>
+                  <td
+                    align="center"
+                    width="120"
+                  >
+                    <button
+                      class="sc-f162131e-0 jLjXKu sc-36d0b95e-2 feocFU"
+                      color="error"
+                      data-testid="button-icon--remove-1"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1.2rem"
+                        stroke="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 24 24"
+                        width="1.2rem"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        />
+                        <path
+                          d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr
+                  class=""
+                >
+                  <td
+                    align="center"
+                    data-th="Título"
+                  >
+                    Test Note C
+                  </td>
+                  <td
+                    align="center"
+                    data-th="Início"
+                  >
+                    03/01/2021
+                     
+                    <br />
+                     
+                    01:22
+                  </td>
+                  <td
+                    align="center"
+                    data-th="Fim"
+                  >
+                    03/01/2021
+                     
+                    <br />
+                     
+                    02:24
+                  </td>
+                  <td
+                    align="center"
+                    data-th="Duração"
+                  >
+                    1 hora e 2 minutos
+                  </td>
+                  <td
+                    align="center"
+                    width="120"
+                  >
+                    <button
+                      class="sc-f162131e-0 jLjXKu sc-36d0b95e-2 feocFU"
+                      color="error"
+                      data-testid="button-icon--remove-3"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1.2rem"
+                        stroke="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 24 24"
+                        width="1.2rem"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        />
+                        <path
+                          d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr
+                  class=""
+                >
+                  <td
+                    align="center"
+                    data-th="Título"
+                  >
+                    Test Note B
+                  </td>
+                  <td
+                    align="center"
+                    data-th="Início"
+                  >
+                    03/02/2000
+                     
+                    <br />
+                     
+                    01:22
+                  </td>
+                  <td
+                    align="center"
+                    data-th="Fim"
+                  >
+                    03/02/2000
+                     
+                    <br />
+                     
+                    02:24
+                  </td>
+                  <td
+                    align="center"
+                    data-th="Duração"
+                  >
+                    1 hora e 2 minutos
+                  </td>
+                  <td
+                    align="center"
+                    width="120"
+                  >
+                    <button
+                      class="sc-f162131e-0 jLjXKu sc-36d0b95e-2 feocFU"
+                      color="error"
+                      data-testid="button-icon--remove-2"
+                      type="button"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1.2rem"
+                        stroke="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 24 24"
+                        width="1.2rem"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        />
+                        <path
+                          d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+`;

@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
+import { SiteContext } from '~/stores/site';
 import { ThemeUI } from '~/theme/theme-provider';
-import { SiteContext } from '~/utils/stores/site';
 import { BlockErrorWired } from '.';
 
 export const listError = [

@@ -2,8 +2,8 @@ import { Form, Formik, FormikProps } from 'formik';
 import { DateTime, Interval } from 'luxon';
 import { memo, useContext, useEffect, useRef, useState } from 'react';
 import { FormikScheduling } from '~/components/formik/scheduling';
+import { SiteContext } from '~/stores/site';
 import { SchedulingInitial, TpSchedulingItem } from '~/types/common';
-import { SiteContext } from '~/utils/stores/site';
 import {
   errorSchedulingEndBiggerThanStart,
   errorSchedulingTitle
@@ -24,6 +24,7 @@ const OgFormikSchedulingWired = () => {
     const valuesObj = { ...values, id };
     dispatch.setScheduling([...state.scheduling, valuesObj]);
     formRef.current?.resetForm();
+    dispatch.setErrorRemAll();
     setValues(SchedulingInitial);
   };
 

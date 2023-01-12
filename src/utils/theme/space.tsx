@@ -17,11 +17,3 @@ export const spaceCalc = (space: number[], type: 'margin' | 'padding') => {
       )}px ${calc(space[3])}px`
     : ``;
 };
-
-export const sizeImg = (space: string[]): {} => {
-  return space.length === 1
-    ? { width: space[0] }
-    : space.length === 2
-    ? { width: space[0], height: space[1] }
-    : {};
-};
