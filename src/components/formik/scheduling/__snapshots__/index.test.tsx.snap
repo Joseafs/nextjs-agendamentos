@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormikScheduling Should match snapshot 1`] = `
+<div>
+  <div
+    class="sc-4a45138a-0 cEXHx"
+    id="formik--scheduling-root"
+  >
+    <div
+      class="sc-8c4bf41-0 kZOgiB"
+    >
+      <div
+        class="sc-277720d7-0 bneybE"
+      >
+        <label
+          class="sc-277720d7-1"
+          for="title"
+        >
+          Título
+        </label>
+        <input
+          class="sc-277720d7-2 gznZqK"
+          data-testid="input-title"
+          id="title"
+          name="title"
+          placeholder="Informe o Título do agendamento"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="sc-4a45138a-1 fyXKeg"
+    >
+      <div
+        class="sc-8c4bf41-0 kZOgiB"
+      >
+        <div
+          class="sc-277720d7-0 bneybE"
+        >
+          <label
+            class="sc-277720d7-1"
+            for="dateTimeStart"
+          >
+            Dia e horário de início
+          </label>
+          <input
+            class="sc-277720d7-2 gznZqK"
+            data-testid="input-dateTimeStart"
+            id="dateTimeStart"
+            max=""
+            name="dateTimeStart"
+            required=""
+            type="datetime-local"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="sc-8c4bf41-0 kZOgiB"
+      >
+        <div
+          class="sc-277720d7-0 bneybE"
+        >
+          <label
+            class="sc-277720d7-1"
+            for="dateTimeEnd"
+          >
+            Dia e horário de fim
+          </label>
+          <input
+            class="sc-277720d7-2 gznZqK"
+            data-testid="input-dateTimeEnd"
+            id="dateTimeEnd"
+            min=""
+            name="dateTimeEnd"
+            required=""
+            type="datetime-local"
+            value=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-8c4bf41-0 hnGkhO"
+    >
+      <button
+        class="sc-1b27c299-0 cRiiAT"
+        color="primary"
+        type="submit"
+      >
+        Agendar
+      </button>
+    </div>
+  </div>
+</div>
+`;
